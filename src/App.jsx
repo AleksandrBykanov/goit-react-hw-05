@@ -1,19 +1,21 @@
-import { NavLink } from 'react-router-dom'
-import css from './App.module.css'
-import clsx from 'clsx'
+import { Route, Routes } from 'react-router-dom'
+import HomePage from './pages/HomePage/HomePage'
+import MoviesPage from './pages/MoviesPage/MoviesPage'
+import Navigation from './components/Navigation/Navigation'
+import './App.module.css'
 
 function App() {
 
-
   return (
     <div>
-      <header>
-        <nav className={css.nav}>
-          <NavLink className={({ isActive })=>clsx(css.link, isActive && css.active)} to="/">Home</NavLink>
-          <NavLink className={({ isActive })=>clsx(css.link, isActive && css.active)} to="/movies">Movies</NavLink>
-        </nav>
-      </header>
-
+      <Navigation />
+      <main>
+        <Routes>
+          <Route path='/' element={<HomePage/>} />
+          <Route path='/movies' element={<MoviesPage/>} />
+        </Routes>
+      </main>
+      <footer></footer>
     </div>
   )
 }
