@@ -5,3 +5,8 @@ body {
   padding: 30px;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+

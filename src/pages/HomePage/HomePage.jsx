@@ -6,10 +6,8 @@ import MoviesList from "../../components/MoviesList/MoviesList";
 import axios from "axios";
 
 const HomePage = () => {
-  const [movies, setMovies] = useState(null);
+  const [movies, setMovies] = useState([]);
   const [loader, setLoader] = useState(false);
-  console.log(movies);
-  
 
   useEffect(() => {
     async function fetchTrending() {
@@ -25,11 +23,9 @@ const HomePage = () => {
           },
         };
         const {data} = await axios.get(url, options);
-        console.log(data);
-        
         setMovies(data.results);
       } catch (error) {
-        console.log(error);
+        alert(JSON.stringify(error))
       } finally {
         setLoader(false);
       }
@@ -40,7 +36,7 @@ const HomePage = () => {
   return (
     <>
       <Title />
-      {Array.isArray(movies) && <MoviesList movies={movies} />}
+      <MoviesList movies={movies} />
       {loader && <Loader />}
     </>
   );
