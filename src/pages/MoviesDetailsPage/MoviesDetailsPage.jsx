@@ -70,14 +70,12 @@ const MoviesDetailsPage = () => {
                 </Link>
               </div>
             </div>
-
-            <div>
-              <Outlet />
-            </div>
+          </div>
+          <div>
+            <Outlet />
           </div>
         </div>
       )}
-
       {loader && <Loader />}
     </>
   );
