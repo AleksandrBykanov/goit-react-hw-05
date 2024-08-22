@@ -6,7 +6,7 @@ import MoviesList from "../../components/MoviesList/MoviesList";
 import axios from "axios";
 
 const HomePage = () => {
-  const [movies, setMovies] = useState([]);
+  const [movies, setMovies] = useState(null);
   const [loader, setLoader] = useState(false);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const HomePage = () => {
   return (
     <>
       <Title />
-      <MoviesList movies={movies} />
+      {movies !== null && <MoviesList movies={movies} />}
       {loader && <Loader />}
     </>
   );

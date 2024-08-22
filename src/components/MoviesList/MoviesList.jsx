@@ -5,10 +5,10 @@ const MoviesList = ({movies}) => {
   
   const location = useLocation();
   return (
-    <ul className={css.list}>
+    <ul className={css.ul}>
       {Array.isArray(movies) && movies.map((movie) => {
         return (
-          <li key={movie.id}>
+          <li className={css.li} key={movie.id}>
             <Link state={{ from: location }} to={`/movies/${movie.id}`}>
             <img className={css.img} src={`https://image.tmdb.org/t/p/w200${movie.backdrop_path}`} alt={movie.title} />
             <p className={css.p}>{movie.title}</p>

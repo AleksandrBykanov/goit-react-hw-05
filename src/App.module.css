@@ -1,5 +1,5 @@
 body {
-  max-width: 1376px;
+  max-width: 1150px;
   margin-left: auto;
   margin-right: auto;
   padding: 30px;
@@ -10,3 +10,7 @@ ul {
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
