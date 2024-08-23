@@ -36,8 +36,8 @@ const HomePage = () => {
   return (
     <>
       <Title />
-      {movies !== null && <MoviesList movies={movies} />}
       {loader && <Loader />}
+      {movies !== null && <MoviesList movies={movies} />}
     </>
   );
 };

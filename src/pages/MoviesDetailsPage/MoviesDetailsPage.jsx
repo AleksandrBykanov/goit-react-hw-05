@@ -38,12 +38,11 @@ const MoviesDetailsPage = () => {
 
   return (
     <>
+      {loader && <Loader />}
       {movies !== null && (
         <div className={css.wrapper}>
           <Link className={css.link} to={backRef.current}>
-            <button type="button" className={css.btn}>
-              &larr; Back to home
-            </button>
+            <button type="button" className={css.btn}>&larr; Back to home</button>
           </Link>
 
           <div className={css.div}>
@@ -76,7 +75,6 @@ const MoviesDetailsPage = () => {
           </div>
         </div>
       )}
-      {loader && <Loader />}
     </>
   );
 };

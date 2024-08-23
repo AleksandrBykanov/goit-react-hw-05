@@ -1,8 +1,14 @@
 body {
+  background-image: url("./assets/bg.jpg");
+  background-size: cover;
+  background-attachment: fixed;
   max-width: 1150px;
   margin-left: auto;
   margin-right: auto;
   padding: 30px;
+  &::-webkit-scrollbar {
+    width: 0;
+  }
 }
 
 ul {

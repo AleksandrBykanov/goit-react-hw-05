@@ -36,16 +36,18 @@ const MovieCast = () => {
 
   return (
     <>
+      {loader && <Loader />}
       <ul className={css.ul}>
         {Array.isArray(movies) &&
           movies.map((item) => {
             return (
               <li className={css.li} key={item.id}>
-                <img className={css.img}
+                <img
+                  className={css.img}
                   src={
                     item.profile_path
                       ? `https://image.tmdb.org/t/p/w200${item.profile_path}`
-                      : foto 
+                      : foto
                   }
                   alt="foto"
                 />
@@ -54,8 +56,6 @@ const MovieCast = () => {
             );
           })}
       </ul>
-
-      {loader && <Loader />}
     </>
   );
 };

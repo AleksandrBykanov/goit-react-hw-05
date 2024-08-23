@@ -37,7 +37,7 @@ const MovieReviews = () => {
     <>
       {loader && <Loader />}
       <ul>
-        {Array.isArray(movies) && movies.length > 0 ?
+        {Array.isArray(movies) && movies.length > 0 ? (
           movies.map((item) => {
             return (
               <li key={item.id}>
@@ -45,10 +45,13 @@ const MovieReviews = () => {
                 <p className={css.p}>{item.content}</p>
               </li>
             );
-          }) : <p className={css.not}>We don`t have any reviews for this movie.</p> } 
+          })
+        ) : (
+          <p className={css.not}>We don`t have any reviews for this movie.</p>
+        )}
       </ul>
     </>
   );
 };
 
-export default MovieReviews
+export default MovieReviews;
