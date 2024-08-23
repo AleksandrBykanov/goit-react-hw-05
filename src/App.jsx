@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation/Navigation";
 import MoviesDetailsPage from "./pages/MoviesDetailsPage/MoviesDetailsPage";
 import MovieCast from "./components/MovieCast/MovieCast";
 import MovieReviews from "./components/MovieReviews/MovieReviews";
+import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
 
 import "./App.module.css";
 
@@ -20,9 +21,9 @@ function App() {
             <Route path="cast" element={<MovieCast />} />
             <Route path="reviews" element={<MovieReviews />} />
           </Route>
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
-      <footer></footer>
     </div>
   );
 }

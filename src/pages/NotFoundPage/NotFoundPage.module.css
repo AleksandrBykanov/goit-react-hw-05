@@ -1,0 +1,22 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 30px;
+  border-radius: 5px;
+  border: none;
+  background-color: orangered;
+  color: white;
+  margin: 15px 0;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(255, 68, 0, 0.712);
+  }
+}
+
+.div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
