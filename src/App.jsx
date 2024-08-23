@@ -10,7 +10,7 @@ const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 const MovieReviews = lazy(() => import("./components/MovieReviews/MovieReviews"));
 const MoviesDetailsPage = lazy(() =>import("./pages/MoviesDetailsPage/MoviesDetailsPage"));
 
-import "./App.module.css";
+import "./App.css";
 
 function App() {
   return (
