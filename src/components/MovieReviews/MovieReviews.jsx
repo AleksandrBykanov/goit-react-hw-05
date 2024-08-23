@@ -8,7 +8,6 @@ const MovieReviews = () => {
   const [movies, setMovies] = useState(null);
   const [loader, setLoader] = useState(false);
 
-
   const { movieId } = useParams();
 
   useEffect(() => {
@@ -33,12 +32,12 @@ const MovieReviews = () => {
     }
     fetchReviews();
   }, [movieId]);
-  console.log(movies);
-  
+
   return (
     <>
+      {loader && <Loader />}
       <ul>
-        {Array.isArray(movies) > 0 ?
+        {Array.isArray(movies) && movies.length > 0 ?
           movies.map((item) => {
             return (
               <li key={item.id}>
@@ -48,7 +47,6 @@ const MovieReviews = () => {
             );
           }) : <p className={css.not}>We don`t have any reviews for this movie.</p> } 
       </ul>
-      {loader && <Loader />}
     </>
   );
 };

@@ -9,7 +9,7 @@ const MoviesDetailsPage = () => {
   const [loader, setLoader] = useState(false);
 
   const location = useLocation();
-  const backRef = useRef(location.state?.from ?? "/");
+  const backRef = useRef(location.state?.from ?? "/movies");
 
   const { movieId } = useParams();
 

@@ -4,4 +4,5 @@ h1 {
 
 .not {
   text-align: center;
+  transition: 5s;
 }

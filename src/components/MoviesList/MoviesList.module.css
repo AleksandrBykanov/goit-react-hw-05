@@ -16,3 +16,8 @@
   text-align: center;
   overflow-wrap: break-word;
 }
+
+.img {
+  width: 200px;
+  height: 113px;
+}
