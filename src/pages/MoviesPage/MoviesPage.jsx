@@ -3,24 +3,26 @@ import { useSearchParams } from "react-router-dom";
 import {useState, useEffect } from "react";
 import FormSearch from '../../components/FormSearch/FormSearch';
 import Loader from "../../components/Loader/Loader";
-import MoviesList from "../../components/MoviesList/MoviesList";
+import MoviesList from "../../components/MovieList/MovieList";
 
 function MoviesPage() {
   const [movies, setMovies] = useState(null);
   const [loader, setLoader] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams({});
 
+  const query = searchParams.get("query");
+
   const search = (value) => {
-    setSearchParams(value.search);
+    setSearchParams({query: value.search});
   };
 
  
   useEffect(() => {
-    if (searchParams == {}) return;
+    if (!query) return;
     async function searchMovie() {
       try {
         setLoader(true);
-        const url = `https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1&query=${searchParams}&language=en-US`;
+        const url = `https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1&query=${query}&language=en-US`;
 
         const options = {
           headers: {
@@ -37,7 +39,7 @@ function MoviesPage() {
       }
     }
     searchMovie();
-  }, [searchParams]);
+  }, [query]);
 
   return (
     <>

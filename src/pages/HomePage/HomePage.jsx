@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import Title from "../../components/Title/Title";
 import Loader from "../../components/Loader/Loader";
-import MoviesList from "../../components/MoviesList/MoviesList";
+import MovieList from "../../components/MovieList/MovieList";
 import axios from "axios";
 
 const HomePage = () => {
@@ -37,7 +37,7 @@ const HomePage = () => {
     <>
       <Title />
       {loader && <Loader />}
-      {movies !== null && <MoviesList movies={movies} />}
+      {movies !== null && <MovieList movies={movies} />}
     </>
   );
 };

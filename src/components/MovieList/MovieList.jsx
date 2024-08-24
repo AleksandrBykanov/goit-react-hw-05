@@ -1,8 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import css from "./MoviesList.module.css";
+import css from "./MovieList.module.css";
 import image from "../../assets/no_foto.jpg";
 
-const MoviesList = ({ movies }) => {
+const MovieList = ({ movies }) => {
   const location = useLocation();
   return (
     <ul className={css.ul}>
@@ -29,4 +29,4 @@ const MoviesList = ({ movies }) => {
   );
 };
 
-export default MoviesList;
+export default MovieList;

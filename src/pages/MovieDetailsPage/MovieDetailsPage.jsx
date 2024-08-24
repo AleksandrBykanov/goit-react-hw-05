@@ -1,10 +1,10 @@
-import css from "./MoviesDetailsPage.module.css";
+import css from "./MovieDetailsPage.module.css";
 import axios from "axios";
 import Loader from "../../components/Loader/Loader";
 import { useEffect, useState, useRef } from "react";
 import { useParams, useLocation, Link, Outlet } from "react-router-dom";
 
-const MoviesDetailsPage = () => {
+const MovieDetailsPage = () => {
   const [movies, setMovies] = useState(null);
   const [loader, setLoader] = useState(false);
 
@@ -79,4 +79,4 @@ const MoviesDetailsPage = () => {
   );
 };
 
-export default MoviesDetailsPage;
+export default MovieDetailsPage;
